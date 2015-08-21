@@ -4,8 +4,8 @@ from __future__ import unicode_literals
 import os
 
 AUTHOR = 'Ziaa'
-SITENAME = 'یک وبلاگ آزمایشی'
-SITEURL = ''
+SITENAME = 'دفتر - یادداشت‌های سید ضیاء الدین عظیمی'
+SITEURL = 'http://daftar.ziaa.ir'
 
 PATH = 'content'
 SCRIPT_PATH = os.path.realpath(__file__)
