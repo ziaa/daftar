@@ -4,7 +4,8 @@ from __future__ import unicode_literals
 import os
 
 AUTHOR = 'Ziaa'
-SITENAME = 'دفتر - یادداشت‌های سید ضیاء الدین عظیمی'
+SITENAME = 'دفتر'
+SITE_DESCRIPTION = 'یادداشت‌های سید ضیاء الدین عظیمی'
 SITEURL = 'http://daftar.ziaa.ir'
 
 PATH = 'content'
