@@ -5,7 +5,7 @@ import os
 
 AUTHOR = 'Ziaa'
 SITENAME = 'دفتر'
-SITE_DESCRIPTION = 'یادداشت‌های سید ضیاء الدین عظیمی'
+SITESUBTITLE = 'یادداشت‌های سید ضیاء الدین عظیمی'
 SITEURL = 'http://daftar.ziaa.ir'
 
 PATH = 'content'
