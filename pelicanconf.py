@@ -52,3 +52,6 @@ THEME = os.path.join(THEMES_PATH, 'Pelican-RTL-theme/')
 # Plugins
 PLUGIN_PATHS = ["plugins"]
 PLUGINS = ["pelican_persian_date"]
+
+# ANALYTICS
+GOOGLE_ANALYTICS = "UA-66952661-2"
