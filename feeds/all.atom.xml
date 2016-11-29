@@ -1,4 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2015-08-21T23:02:00+04:30</updated><entry><title>سلام دنیا!</title><link href="http://daftar.ziaa.ir/posts/2015/08/Hello-World/" rel="alternate"></link><updated>2015-08-21T23:02:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2015-08-21:posts/2015/08/Hello-World/</id><summary type="html">&lt;p&gt;ما توسعه‌دهنده‌ها و برنامه‌نویس‌ها وقتی‌که یادگیری زبان برنامه‌نویسی یا ابزار جدیدی رو شروع می‌کنیم؛ تقریباً می‌شه گفت اولین کاری که انجام می‌دیم اینه که سعی می‌کنیم عبارت &lt;strong&gt;Hello World&lt;/strong&gt; رو توی خروجی نمایش بدیم. بعد از اینکه این خروجی رو دیدیم و کلی ذوق‌مرگ شدیم؛ شروع می‌کنیم به  یادگیری دقیق اون زبان برنامه‌نویسی و تازه بدبختی‌هامون شروع می‌شه! بدبختی‌هایی که شیرین و لذت‌بخش هستند.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2016-11-29T19:30:00+03:30</updated><entry><title>راهنمای استفاده از سایت‌ساز پلیکان - بخش اول - نصب و راه‌اندازی اولیه</title><link href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation/" rel="alternate"></link><published>2016-11-29T19:30:00+03:30</published><updated>2016-11-29T19:30:00+03:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2016-11-29:posts/2016/11/Using-Pelican-static-site-generator-part1-installation/</id><summary type="html">&lt;p&gt;اگه علاقه دارید که سایت یا وبلاگ خودتان را با ابزارهایی که سایت استاتیک ایجاد می‌کنند، درست کنید؛ &lt;a href="http://getpelican.com"&gt;پلیکان&lt;/a&gt; یکی از &lt;a href="https://www.staticgen.com/"&gt;چندین گزینه‌ای&lt;/a&gt; است که شما در اختیار دارید. چرخه استفاده از این سایت‌سازها تقریبا شبیه به هم است:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;write&lt;/li&gt;
+&lt;li&gt;build&lt;/li&gt;
+&lt;li&gt;publish&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;شما نوشته مورد نظرتان را می‌نویسید، خروجی html را سایت‌ساز برای‌تان ایجاد می‌کند و در نهایت این خروجی را در هاست خود قرار می‌دهید. البته مشخص است که یک برنامه‌نویس فقط مطلب مورد نظر را می‌نویسد و با ابزارها و کدهای مختلف بقیه مراحل را به کامپیوتر واگذار می‌کند. تا حد امکان ما دوست داریم کارها &lt;strong&gt;خودکار&lt;/strong&gt; انجام شوند!&lt;/p&gt;
+&lt;p&gt;در اینجا به صورت &lt;strong&gt;خلاصه&lt;/strong&gt; راهنمای اولیه نصب پلیکان و ایجاد وبلاگ اولیه با استفاده از آن را می‌نویسم. توجه کنید که این مطلب صرفاً یک &lt;strong&gt;یادداشت&lt;/strong&gt; است. برای راهنمای کامل به &lt;a href="http://docs.getpelican.com"&gt;مستندات پلیکان&lt;/a&gt; مراجعه کنید.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;نصب پایتون&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 2.7.x+ یا Python 3.3+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;نصب مدیر بسته‌های پایتون pip&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;اگر از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را &lt;a href="https://pip.pypa.io/en/stable/installing.html"&gt;نصب کنید&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;برای به روز رسانی pip&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m pip install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;نصب پلیکان&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install pelican
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;نصب Markdown‌ (در صورتیکه می‌خواهید نوشته‌ها را با مارک‌داون بنویسید)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Markdown
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;ساختن پوشه سایت و ایجاد ساختار اولیه&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;mkdir your-project-folder
+cd your-project-folder
+pelican-quickstart
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;پاسخ‌گویی به سوالات (جواب‌های پیش‌فرض در براکت [] نوشته شده)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;...
+&amp;gt; What is your time zone? [Europe/Paris] Asia/Tehran
+...
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;نوشتن اولین مطلب در یک فایل md و در پوشه content&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;Title: سلام دنیا!
+Slug: Hello-World
+Date: 2015-07-21 23:20
+Category: Test
+Tags: Test
+
+سلام دنیا!
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;ساختن فایل‌های استاتیک وبلاگ (خروجی‌ها در پوشه output)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;راه‌اندازی سرور local&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;cd output
+python -m pelican.server
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس &lt;code&gt;http://localhost:8000&lt;/code&gt; قابل دسترسی است. در بخش‌های بعدی به تغییر قالب، فارسی‌سازی و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>سلام دنیا!</title><link href="http://daftar.ziaa.ir/posts/2015/08/Hello-World/" rel="alternate"></link><published>2015-08-21T23:02:00+04:30</published><updated>2015-08-21T23:02:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2015-08-21:posts/2015/08/Hello-World/</id><summary type="html">&lt;p&gt;ما توسعه‌دهنده‌ها و برنامه‌نویس‌ها وقتی‌که یادگیری زبان برنامه‌نویسی یا ابزار جدیدی رو شروع می‌کنیم؛ تقریباً می‌شه گفت اولین کاری که انجام می‌دیم اینه که سعی می‌کنیم عبارت &lt;strong&gt;Hello World&lt;/strong&gt; رو توی خروجی نمایش بدیم. بعد از اینکه این خروجی رو دیدیم و کلی ذوق‌مرگ شدیم؛ شروع می‌کنیم به  یادگیری دقیق اون زبان برنامه‌نویسی و تازه بدبختی‌هامون شروع می‌شه! بدبختی‌هایی که شیرین و لذت‌بخش هستند.&lt;/p&gt;
 &lt;p&gt;پس...&lt;/p&gt;
 &lt;p&gt;سلام دنیا! سلام &lt;a href="http://getpelican.com"&gt;پلیکان&lt;/a&gt;!&lt;/p&gt;</summary><category term="Test"></category></entry></feed>
