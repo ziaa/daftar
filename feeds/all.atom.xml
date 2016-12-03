@@ -1,5 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2016-11-29T19:30:00+03:30</updated><entry><title>راهنمای استفاده از سایت‌ساز پلیکان - بخش اول - نصب و راه‌اندازی اولیه</title><link href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation/" rel="alternate"></link><published>2016-11-29T19:30:00+03:30</published><updated>2016-11-29T19:30:00+03:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2016-11-29:posts/2016/11/Using-Pelican-static-site-generator-part1-installation/</id><summary type="html">&lt;p&gt;اگه علاقه دارید که سایت یا وبلاگ خودتان را با ابزارهایی که سایت استاتیک ایجاد می‌کنند، درست کنید؛ &lt;a href="http://getpelican.com"&gt;پلیکان&lt;/a&gt; یکی از &lt;a href="https://www.staticgen.com/"&gt;چندین گزینه‌ای&lt;/a&gt; است که شما در اختیار دارید. چرخه استفاده از این سایت‌سازها تقریبا شبیه به هم است:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2016-12-03T22:30:00+03:30</updated><entry><title>راهنمای استفاده از سایت‌ساز پلیکان - بخش دوم - تغییر قالب و تبدیل تاریخ نوشته‌ها از میلادی به شمسی</title><link href="http://daftar.ziaa.ir/posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali/" rel="alternate"></link><published>2016-12-03T22:30:00+03:30</published><updated>2016-12-03T22:30:00+03:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2016-12-03:posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali/</id><summary type="html">&lt;p&gt;در بخش قبل، خلاصه‌وار به &lt;a href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation"&gt;نصب و ایجاد یک وبلاگ آزمایشی با استفاده از سایت ساز پلیکان&lt;/a&gt; اشاره کردم. در این بخش، روش تغییر قالب و تبدیل تاریخ مطالب از میلادی به شمسی را ذکر خواهم کرد.&lt;/p&gt;
+&lt;p&gt;برای پلیکان &lt;a href="https://github.com/getpelican/pelican-themes"&gt;قالب‌های مختلفی&lt;/a&gt; ایجاد شده است. شما به راحتی می‌توانید با نگاهی به آنها و قالب ساده‌ای مثل &lt;a href="https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates"&gt;simple&lt;/a&gt; و مستندات &lt;a href="http://jinja.pocoo.org"&gt;jinja&lt;/a&gt; قالب دلخواه خود را &lt;a href="http://docs.getpelican.com/en/stable/themes.html"&gt;ایجاد کنید.&lt;/a&gt; اگر به قالب راست-به-چپ و مناسب نوشته‌های فارسی نیاز دارید می‌توانید از &lt;a href="https://github.com/ziaa/Pelican-RTL-theme"&gt;Pelican-RTL-theme&lt;/a&gt; استفاده کنید. این قالب برگرفته از &lt;a href="https://github.com/sobhe/pelican-sobhe"&gt;کار خوب تیم سُبحه&lt;/a&gt; است.&lt;/p&gt;
+&lt;h3&gt;روش تغییر قالب&lt;/h3&gt;
+&lt;p&gt;بهتر است پوشه‌ای با نام دلخواه مثلا &lt;code&gt;themes&lt;/code&gt; برای نگهداری قالب‌های وبلاگ خود در نظر بگیرید. سپس به هر روشی که دوست دارید؛ فایل‌های مورد نیاز هر قالب را به این پوشه انتقال دهید. مثلا می‌توانید به یکی از روش‌های زیر عمل کنید:&lt;/p&gt;
+&lt;p&gt;۱. کپی کردن مخزن قالب&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/ziaa/Pelican-RTL-theme.git themes/Pelican-RTL-theme
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;۲. اضافه کردن قالب به عنوان submodule&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add -b master https://github.com/ziaa/Pelican-RTL-theme.git themes/Pelican-RTL-theme
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در مرحله بعد باید مسیر قالب مورد نظر را در فایل تنظیمات پلیکان &lt;code&gt;pelicanconf.py&lt;/code&gt; وارد کنید.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;#Theme
+
+THEME = &amp;#39;مسیر/Pelican-RTL-theme&amp;#39; 
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;همچنین بجای این کار می‌توانید در هنگام تهیه خروجی‌های استاتیک سایت، مسیر قالب را مشخص کنید.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content -s pelicanconf.py -t path/to/themes/Pelican-RTL-theme
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;روش فارسی کردن تاریخ نوشته‌ها&lt;/h3&gt;
+&lt;p&gt;یکی از قابلیت‌های سایت ساز پلیکان امکان &lt;a href="http://docs.getpelican.com/en/stable/plugins.html"&gt;نوشتن پلاگین‌های دلخواه&lt;/a&gt; برای آن است. شما می‌توانید فهرستی از پلاگین‌های موجود را در &lt;a href="https://github.com/getpelican/pelican-plugins"&gt;اینجا&lt;/a&gt; مشاهده کنید. 
+برای فارسی کردن تاریخ‌ مطالب می‌توانید از پلاگین &lt;a href="https://github.com/ziaa/pelican_persian_date"&gt;Pelican Persian date&lt;/a&gt; استفاده کنید. برای استفاده از آن ابتدا بهتر است پوشه‌ای با نام دلخواه (مثلا &lt;code&gt;plugins&lt;/code&gt;) برای نگهداری پلاگین‌ها ایجاد کنید. سپس به هر روشی که دوست دارید فایل‌های پلاگین را در این پوشه قرار دهید. مثلا می‌توانید از یکی از روش‌های زیر استفاده کنید:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git clone https://github.com/ziaa/pelican_persian_date.git plugins/pelican_persian_date
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;git submodule add -b master https://github.com/ziaa/pelican_persian_date.git plugins/pelican_persian_date
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در مرحله بعد باید مسیر پوشه &lt;code&gt;plugins&lt;/code&gt; و پلاگین‌های فعال را در فایل تنظیمات پلیکان &lt;code&gt;pelicanconf.py&lt;/code&gt; مشخص کنید. برای اینکار خطوط زیر را به آن اضافه کنید.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;# Plugins
+PLUGIN_PATHS = [&amp;#39;مسیر/plugins&amp;#39;]
+PLUGINS = [&amp;quot;pelican_persian_date&amp;quot;]
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;اگر می‌خواهید شکل خروجی تاریخ‌ها را کنترل کنید، این خطوط را به فایل &lt;code&gt;pelicanconf.py&lt;/code&gt; اضافه کنید.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;DATE_FORMATS = {
+    &amp;#39;fa&amp;#39;: &amp;#39;%A %d %B %Y&amp;#39;
+}
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;با این کار می‌توانید مشخص کنید که تاریخ‌های فارسی به چه شکلی نمایش داده شود. مثلا &lt;em&gt;شنبه ۱۳ آذر ۱۳۹۵&lt;/em&gt; یا &lt;em&gt;۱۳۹۵/۰۹/۱۳&lt;/em&gt; یا هر شکل دلخواه دیگری. برای آشنایی با انواع فرمت‌ها از این &lt;a href="https://docs.python.org/3.4/library/datetime.html?highlight=datetime#strftime-and-strptime-behavior"&gt;لینک&lt;/a&gt; کمک بگرید.&lt;/p&gt;
+&lt;p&gt;در نهایت خروجی وبلاگ را دوباره بسازید و از قالب و تاریخ فارسی لذت ببرید!&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pelican content
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Pelican"></category></entry><entry><title>راهنمای استفاده از سایت‌ساز پلیکان - بخش اول - نصب و راه‌اندازی اولیه</title><link href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation/" rel="alternate"></link><published>2016-11-29T19:30:00+03:30</published><updated>2016-11-29T19:30:00+03:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2016-11-29:posts/2016/11/Using-Pelican-static-site-generator-part1-installation/</id><summary type="html">&lt;p&gt;اگه علاقه دارید که سایت یا وبلاگ خودتان را با ابزارهایی که سایت استاتیک ایجاد می‌کنند، درست کنید؛ &lt;a href="http://getpelican.com"&gt;پلیکان&lt;/a&gt; یکی از &lt;a href="https://www.staticgen.com/"&gt;چندین گزینه‌ای&lt;/a&gt; است که شما در اختیار دارید. چرخه استفاده از این سایت‌سازها تقریبا شبیه به هم است:&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;write&lt;/li&gt;
 &lt;li&gt;build&lt;/li&gt;
@@ -88,6 +142,6 @@ python -m pelican.server
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس &lt;code&gt;http://localhost:8000&lt;/code&gt; قابل دسترسی است. در بخش‌های بعدی به تغییر قالب، فارسی‌سازی و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>سلام دنیا!</title><link href="http://daftar.ziaa.ir/posts/2015/08/Hello-World/" rel="alternate"></link><published>2015-08-21T23:02:00+04:30</published><updated>2015-08-21T23:02:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2015-08-21:posts/2015/08/Hello-World/</id><summary type="html">&lt;p&gt;ما توسعه‌دهنده‌ها و برنامه‌نویس‌ها وقتی‌که یادگیری زبان برنامه‌نویسی یا ابزار جدیدی رو شروع می‌کنیم؛ تقریباً می‌شه گفت اولین کاری که انجام می‌دیم اینه که سعی می‌کنیم عبارت &lt;strong&gt;Hello World&lt;/strong&gt; رو توی خروجی نمایش بدیم. بعد از اینکه این خروجی رو دیدیم و کلی ذوق‌مرگ شدیم؛ شروع می‌کنیم به  یادگیری دقیق اون زبان برنامه‌نویسی و تازه بدبختی‌هامون شروع می‌شه! بدبختی‌هایی که شیرین و لذت‌بخش هستند.&lt;/p&gt;
+&lt;p&gt;الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس &lt;code&gt;http://localhost:8000&lt;/code&gt; قابل دسترسی است. در بخش‌های بعدی به &lt;a href="http://daftar.ziaa.ir/posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali"&gt;تغییر قالب، فارسی‌سازی&lt;/a&gt; و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.&lt;/p&gt;</summary><category term="Pelican"></category></entry><entry><title>سلام دنیا!</title><link href="http://daftar.ziaa.ir/posts/2015/08/Hello-World/" rel="alternate"></link><published>2015-08-21T23:02:00+04:30</published><updated>2015-08-21T23:02:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2015-08-21:posts/2015/08/Hello-World/</id><summary type="html">&lt;p&gt;ما توسعه‌دهنده‌ها و برنامه‌نویس‌ها وقتی‌که یادگیری زبان برنامه‌نویسی یا ابزار جدیدی رو شروع می‌کنیم؛ تقریباً می‌شه گفت اولین کاری که انجام می‌دیم اینه که سعی می‌کنیم عبارت &lt;strong&gt;Hello World&lt;/strong&gt; رو توی خروجی نمایش بدیم. بعد از اینکه این خروجی رو دیدیم و کلی ذوق‌مرگ شدیم؛ شروع می‌کنیم به  یادگیری دقیق اون زبان برنامه‌نویسی و تازه بدبختی‌هامون شروع می‌شه! بدبختی‌هایی که شیرین و لذت‌بخش هستند.&lt;/p&gt;
 &lt;p&gt;پس...&lt;/p&gt;
 &lt;p&gt;سلام دنیا! سلام &lt;a href="http://getpelican.com"&gt;پلیکان&lt;/a&gt;!&lt;/p&gt;</summary><category term="Test"></category></entry></feed>

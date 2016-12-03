@@ -23,6 +23,72 @@
 	<div class="posts">
 			<div class="post">
 				<h3>
+					<a href="http://daftar.ziaa.ir/posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali/" title="راهنمای استفاده از سایت‌ساز پلیکان - بخش دوم - تغییر قالب و تبدیل تاریخ نوشته‌ها از میلادی به شمسی">راهنمای استفاده از سایت‌ساز پلیکان - بخش دوم - تغییر قالب و تبدیل تاریخ نوشته‌ها از میلادی به شمسی</a>
+				</h3>
+				<div class="info">
+					شنبه 13 آذر 1395
+						توسط <a class="url fn" href="http://daftar.ziaa.ir/author/ziaa.html">Ziaa</a>
+				</div>
+				<div class="content">
+					<p>در بخش قبل، خلاصه‌وار به <a href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation">نصب و ایجاد یک وبلاگ آزمایشی با استفاده از سایت ساز پلیکان</a> اشاره کردم. در این بخش، روش تغییر قالب و تبدیل تاریخ مطالب از میلادی به شمسی را ذکر خواهم کرد.</p>
+<p>برای پلیکان <a href="https://github.com/getpelican/pelican-themes">قالب‌های مختلفی</a> ایجاد شده است. شما به راحتی می‌توانید با نگاهی به آنها و قالب ساده‌ای مثل <a href="https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates">simple</a> و مستندات <a href="http://jinja.pocoo.org">jinja</a> قالب دلخواه خود را <a href="http://docs.getpelican.com/en/stable/themes.html">ایجاد کنید.</a> اگر به قالب راست-به-چپ و مناسب نوشته‌های فارسی نیاز دارید می‌توانید از <a href="https://github.com/ziaa/Pelican-RTL-theme">Pelican-RTL-theme</a> استفاده کنید. این قالب برگرفته از <a href="https://github.com/sobhe/pelican-sobhe">کار خوب تیم سُبحه</a> است.</p>
+<h3>روش تغییر قالب</h3>
+<p>بهتر است پوشه‌ای با نام دلخواه مثلا <code>themes</code> برای نگهداری قالب‌های وبلاگ خود در نظر بگیرید. سپس به هر روشی که دوست دارید؛ فایل‌های مورد نیاز هر قالب را به این پوشه انتقال دهید. مثلا می‌توانید به یکی از روش‌های زیر عمل کنید:</p>
+<p>۱. کپی کردن مخزن قالب</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ziaa/Pelican-RTL-theme.git themes/Pelican-RTL-theme
+</pre></div>
+
+
+<p>۲. اضافه کردن قالب به عنوان submodule</p>
+<div class="highlight"><pre><span></span>git submodule add -b master https://github.com/ziaa/Pelican-RTL-theme.git themes/Pelican-RTL-theme
+</pre></div>
+
+
+<p>در مرحله بعد باید مسیر قالب مورد نظر را در فایل تنظیمات پلیکان <code>pelicanconf.py</code> وارد کنید.</p>
+<div class="highlight"><pre><span></span>#Theme
+
+THEME = &#39;مسیر/Pelican-RTL-theme&#39; 
+</pre></div>
+
+
+<p>همچنین بجای این کار می‌توانید در هنگام تهیه خروجی‌های استاتیک سایت، مسیر قالب را مشخص کنید.</p>
+<div class="highlight"><pre><span></span>pelican content -s pelicanconf.py -t path/to/themes/Pelican-RTL-theme
+</pre></div>
+
+
+<h3>روش فارسی کردن تاریخ نوشته‌ها</h3>
+<p>یکی از قابلیت‌های سایت ساز پلیکان امکان <a href="http://docs.getpelican.com/en/stable/plugins.html">نوشتن پلاگین‌های دلخواه</a> برای آن است. شما می‌توانید فهرستی از پلاگین‌های موجود را در <a href="https://github.com/getpelican/pelican-plugins">اینجا</a> مشاهده کنید. 
+برای فارسی کردن تاریخ‌ مطالب می‌توانید از پلاگین <a href="https://github.com/ziaa/pelican_persian_date">Pelican Persian date</a> استفاده کنید. برای استفاده از آن ابتدا بهتر است پوشه‌ای با نام دلخواه (مثلا <code>plugins</code>) برای نگهداری پلاگین‌ها ایجاد کنید. سپس به هر روشی که دوست دارید فایل‌های پلاگین را در این پوشه قرار دهید. مثلا می‌توانید از یکی از روش‌های زیر استفاده کنید:</p>
+<div class="highlight"><pre><span></span>git clone https://github.com/ziaa/pelican_persian_date.git plugins/pelican_persian_date
+</pre></div>
+
+
+<div class="highlight"><pre><span></span>git submodule add -b master https://github.com/ziaa/pelican_persian_date.git plugins/pelican_persian_date
+</pre></div>
+
+
+<p>در مرحله بعد باید مسیر پوشه <code>plugins</code> و پلاگین‌های فعال را در فایل تنظیمات پلیکان <code>pelicanconf.py</code> مشخص کنید. برای اینکار خطوط زیر را به آن اضافه کنید.</p>
+<div class="highlight"><pre><span></span># Plugins
+PLUGIN_PATHS = [&#39;مسیر/plugins&#39;]
+PLUGINS = [&quot;pelican_persian_date&quot;]
+</pre></div>
+
+
+<p>اگر می‌خواهید شکل خروجی تاریخ‌ها را کنترل کنید، این خطوط را به فایل <code>pelicanconf.py</code> اضافه کنید.</p>
+<div class="highlight"><pre><span></span>DATE_FORMATS = {
+    &#39;fa&#39;: &#39;%A %d %B %Y&#39;
+}
+</pre></div>
+
+
+<p>با این کار می‌توانید مشخص کنید که تاریخ‌های فارسی به چه شکلی نمایش داده شود. مثلا <em>شنبه ۱۳ آذر ۱۳۹۵</em> یا <em>۱۳۹۵/۰۹/۱۳</em> یا هر شکل دلخواه دیگری. برای آشنایی با انواع فرمت‌ها از این <a href="https://docs.python.org/3.4/library/datetime.html?highlight=datetime#strftime-and-strptime-behavior">لینک</a> کمک بگرید.</p>
+<p>در نهایت خروجی وبلاگ را دوباره بسازید و از قالب و تاریخ فارسی لذت ببرید!</p>
+<div class="highlight"><pre><span></span>pelican content
+</pre></div>
+				</div>
+			</div>
+			<div class="post">
+				<h3>
 					<a href="http://daftar.ziaa.ir/posts/2016/11/Using-Pelican-static-site-generator-part1-installation/" title="راهنمای استفاده از سایت‌ساز پلیکان - بخش اول - نصب و راه‌اندازی اولیه">راهنمای استفاده از سایت‌ساز پلیکان - بخش اول - نصب و راه‌اندازی اولیه</a>
 				</h3>
 				<div class="info">
@@ -119,7 +185,7 @@ python -m pelican.server
 </pre></div>
 
 
-<p>الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس <code>http://localhost:8000</code> قابل دسترسی است. در بخش‌های بعدی به تغییر قالب، فارسی‌سازی و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.</p>
+<p>الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس <code>http://localhost:8000</code> قابل دسترسی است. در بخش‌های بعدی به <a href="http://daftar.ziaa.ir/posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali">تغییر قالب، فارسی‌سازی</a> و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.</p>
 				</div>
 			</div>
 			<div class="post">
