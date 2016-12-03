@@ -71,7 +71,7 @@ python -m pelican.server
 ```
 
 
-الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس `http://localhost:8000` قابل دسترسی است. در بخش‌های بعدی به تغییر قالب، فارسی‌سازی و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.
+الان وبلاگ با قالب پیش‌فرض ساخته شده و از طریق آدرس `http://localhost:8000` قابل دسترسی است. در بخش‌های بعدی به [تغییر قالب، فارسی‌سازی](http://daftar.ziaa.ir/posts/2016/12/Using-Pelican-static-site-generator-part2-changing-theme-converting-dates-to-Jalali) و قرار دادن وبلاگ روی گیت‌هاب اشاره خواهم کرد.
 
 [پلیکان]: http://getpelican.com
 [مستندات پلیکان]:http://docs.getpelican.com
