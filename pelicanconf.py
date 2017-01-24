@@ -55,3 +55,6 @@ PLUGINS = ["pelican_persian_date"]
 
 # ANALYTICS
 GOOGLE_ANALYTICS = "UA-66952661-2"
+
+# PATHS
+STATIC_PATHS = ['Images']
