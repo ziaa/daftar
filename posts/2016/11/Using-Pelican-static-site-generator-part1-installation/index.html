@@ -49,14 +49,37 @@
 <li>
 <p>نصب مدیر بسته‌های پایتون pip</p>
 </li>
-<li>
-<p>اگر از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را <a href="https://pip.pypa.io/en/stable/installing.html">نصب کنید</a>.</p>
-</li>
-<li>
-<p>برای به روز رسانی pip</p>
-</li>
+<li>اگر در ویندوز از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را <a href="https://pip.pypa.io/en/stable/installing.html">نصب کنید</a>.</li>
+<li>برای نصب pip در اوبونتو <a href="https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers">(راهنمای نصب در سایر توزیع‌های لینوکس)</a></li>
+</ul>
+<div class="highlight"><pre><span></span>sudo apt-get install python-pip
+</pre></div>
+
+
+<ul>
+<li>برای به روز رسانی pip در ویندوز</li>
 </ul>
 <div class="highlight"><pre><span></span>python -m pip install --upgrade pip
+</pre></div>
+
+
+<ul>
+<li>به روز رسانی pip در توزیع‌های لینوکس</li>
+</ul>
+<div class="highlight"><pre><span></span>pip install --upgrade pip
+</pre></div>
+
+
+<p>در صورت نیاز استفاده از <a href="https://virtualenv.pypa.io/en/stable/userguide/">virtualenv</a> برای ایزوله کردن محیط توسعه و بسته‌های پایتون. <a href="https://askubuntu.com/questions/244641/how-to-set-up-and-use-a-virtual-python-environment-in-ubuntu">(راهنمای نصب در اوبونتو)</a></p>
+<div class="highlight"><pre><span></span>sudo apt install virtualenv
+virtualenv ~/virtualenvs/pelican
+cd ~/virtualenvs/pelican
+source bin/activate
+
+# Do what ever you want
+# example: pip install pelican
+# And after you&#39;ve done your job, deactivate virtualenv
+deactivate
 </pre></div>
 
 

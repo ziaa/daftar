@@ -93,14 +93,37 @@ PLUGINS = [&amp;quot;pelican_persian_date&amp;quot;]
 &lt;li&gt;
 &lt;p&gt;نصب مدیر بسته‌های پایتون pip&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;اگر از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را &lt;a href="https://pip.pypa.io/en/stable/installing.html"&gt;نصب کنید&lt;/a&gt;.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;برای به روز رسانی pip&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;اگر در ویندوز از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را &lt;a href="https://pip.pypa.io/en/stable/installing.html"&gt;نصب کنید&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;برای نصب pip در اوبونتو &lt;a href="https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers"&gt;(راهنمای نصب در سایر توزیع‌های لینوکس)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt-get install python-pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;برای به روز رسانی pip در ویندوز&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m pip install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;به روز رسانی pip در توزیع‌های لینوکس&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install --upgrade pip
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;در صورت نیاز استفاده از &lt;a href="https://virtualenv.pypa.io/en/stable/userguide/"&gt;virtualenv&lt;/a&gt; برای ایزوله کردن محیط توسعه و بسته‌های پایتون. &lt;a href="https://askubuntu.com/questions/244641/how-to-set-up-and-use-a-virtual-python-environment-in-ubuntu"&gt;(راهنمای نصب در اوبونتو)&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo apt install virtualenv
+virtualenv ~/virtualenvs/pelican
+cd ~/virtualenvs/pelican
+source bin/activate
+
+# Do what ever you want
+# example: pip install pelican
+# And after you&amp;#39;ve done your job, deactivate virtualenv
+deactivate
 &lt;/pre&gt;&lt;/div&gt;
 
 
