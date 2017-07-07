@@ -18,11 +18,33 @@ Tags: Pelican
     *  Python 2.7.x+ یا Python 3.3+
 
 * نصب مدیر بسته‌های پایتون pip
-  * اگر از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را [نصب کنید](https://pip.pypa.io/en/stable/installing.html).
+  * اگر در ویندوز از Python 2.7.9 یا بالاتر و Python 3.4 یا بالاتر استفاده می‌کنید؛ pip قبلاً نصب شده و گرنه باید آن‌را [نصب کنید](https://pip.pypa.io/en/stable/installing.html).
+  * برای نصب pip در اوبونتو [(راهنمای نصب در سایر توزیع‌های لینوکس)](https://packaging.python.org/guides/installing-using-linux-tools/#installing-pip-setuptools-wheel-with-linux-package-managers)
+```
+sudo apt-get install python-pip
+```
 
-* برای به روز رسانی pip
+* برای به روز رسانی pip در ویندوز
 ```
 python -m pip install --upgrade pip
+```
+
+* به روز رسانی pip در توزیع‌های لینوکس
+```
+pip install --upgrade pip
+```
+
+ در صورت نیاز استفاده از [virtualenv](https://virtualenv.pypa.io/en/stable/userguide/) برای ایزوله کردن محیط توسعه و بسته‌های پایتون. [(راهنمای نصب در اوبونتو)](https://askubuntu.com/questions/244641/how-to-set-up-and-use-a-virtual-python-environment-in-ubuntu)
+```
+sudo apt install virtualenv
+virtualenv ~/virtualenvs/pelican
+cd ~/virtualenvs/pelican
+source bin/activate
+
+# Do what ever you want
+# example: pip install pelican
+# And after you've done your job, deactivate virtualenv
+deactivate
 ```
 
 * نصب پلیکان
