@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2017-09-01T12:00:00+04:30</updated><entry><title>اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟</title><link href="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/" rel="alternate"></link><published>2017-09-01T12:00:00+04:30</published><updated>2017-09-01T12:00:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2017-09-01:/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/</id><summary type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2017-09-01T12:00:00+04:30</updated><entry><title>اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟</title><link href="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/" rel="alternate"></link><published>2017-09-01T12:00:00+04:30</published><updated>2017-09-01T12:00:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2017-09-01:/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/</id><summary type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;بعضی وقت‌ها برنامه‌هایی که نوشتیم دچار اشکال می‌شن یا بهتره بگم نوشتن نرم‌افزار بدون باگ تقریبا نشدنی است. البته مشخصه که اینجا منظورم از نرم افزار، برنامه‌ای با یکی-دو خط …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;بعضی وقت‌ها برنامه‌هایی که نوشتیم دچار اشکال می‌شن یا بهتره بگم نوشتن نرم‌افزار بدون باگ تقریبا نشدنی است. البته مشخصه که اینجا منظورم از نرم افزار، برنامه‌ای با یکی-دو خط کد نیست! مهم اینه که باگ‌ها رو در زمان مناسب تشخیص داد و به درستی رفع و مدیریت کرد. یکی از مواردی که شناسایی باگ‌ها رو راحت‌تر می‌کنه لاگ‌ها هستن. 
 جمله معروفی هست که می‌گه:&lt;/p&gt;
@@ -69,9 +69,9 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;&lt;img alt="SQL Server Profiler configs" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/SQL-Server-Profiler-Captures-sp_trace_generateevent-Events.PNG"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="SQL Server Profiler configs" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/SQL-Server-Profiler-Captures-sp_trace_generateevent-Events.PNG"&gt;&lt;/p&gt;
 &lt;p&gt;و در نهایت وقتی که مشغول ردگیری خطاها شدیم و پروفایلر رو اجرا کردیم داده‌های مورد نظرمون رو می‌بینیم.
-&lt;img alt="Trace" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/SQL-Server-Profiler-Trace.PNG"&gt;&lt;/p&gt;
+&lt;img alt="Trace" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/SQL-Server-Profiler-Trace.PNG"&gt;&lt;/p&gt;
 &lt;div class="footnote"&gt;
 &lt;hr&gt;
 &lt;ol&gt;
