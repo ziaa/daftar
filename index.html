@@ -7,6 +7,12 @@
 	<link rel="stylesheet" href="http://daftar.ziaa.ir/theme/css/bootstrap-rtl.css" type="text/css" />
 	<link rel="stylesheet" href="http://daftar.ziaa.ir/theme/css/pygments.css" type="text/css" />
 	<link rel="stylesheet" href="http://daftar.ziaa.ir/theme/css/main.css" type="text/css" />
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+	<script>
+  		$(document).ready(function () {
+    		$("table").addClass("table table-striped table-condensed table-bordered");
+  	  	});
+    </script>
 	<meta charset="utf-8" />
 
 	<link rel="alternate" href="http://daftar.ziaa.ir/feeds/all.atom.xml" type="application/atom+xml" title="خبرخوان دفتر -یادداشت‌های سید ضیاء الدین عظیمی " />
@@ -21,6 +27,103 @@
 			</div>
 <div class="content">
 	<div class="posts">
+			<div class="post">
+				<h3>
+					<a href="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/" title="اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟">اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟</a>
+				</h3>
+				<div class="info">
+					جمعه 10 شهریور 1396
+						توسط <a class="url fn" href="http://daftar.ziaa.ir/author/ziaa.html">Ziaa</a>
+				</div>
+				<div class="content">
+					<p><a href="https://ganjoor.net/parvin/divanp/mtm/sh126/">هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست</a></p>
+<p>بعضی وقت‌ها برنامه‌هایی که نوشتیم دچار اشکال می‌شن یا بهتره بگم نوشتن نرم‌افزار بدون باگ تقریبا نشدنی است. البته مشخصه که اینجا منظورم از نرم افزار، برنامه‌ای با یکی-دو خط کد نیست! مهم اینه که باگ‌ها رو در زمان مناسب تشخیص داد و به درستی رفع و مدیریت کرد. یکی از مواردی که شناسایی باگ‌ها رو راحت‌تر می‌کنه لاگ‌ها هستن. 
+جمله معروفی هست که می‌گه:</p>
+<blockquote>
+<p>Log early, log often</p>
+</blockquote>
+<p>در لایه دیتابیس ابزاری که برای شناسایی خطاها و بررسی کارایی کد و پایگاه داده استفاده می‌شه <a href="https://docs.microsoft.com/en-us/sql/tools/sql-server-profiler/sql-server-profiler">SQL Server Profiler</a> هست. 
+برای اینکه بتونیم در رویه‌ها<sup id="fnref-Stored procedure"><a class="footnote-ref" href="#fn-Stored procedure">1</a></sup> و تابع‌ها<sup id="fnref-Function"><a class="footnote-ref" href="#fn-Function">2</a></sup> اطلاعات مورد نظر رو به پروفایلر بفرستیم؛ می‌تونیم از <a href="https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-trace-generateevent-transact-sql">sp_trace_generateevent</a> استفاده کنیم.</p>
+<p>این SP سه تا ورودی داره. <code>@eventid</code> و <code>@userinfo</code> و <code>@userdata</code> که از بین اونها فقط <code>@eventid</code> ضروریه. 
+این پارامتر به دلخواه خودمون می‌تونه یکی از اعداد ۸۲ تا ۹۱ باشه و برای شناسایی نوع رویداد و فیلتر کردن اونها استفاده میشه.
+میشه برای خودمون قرارداد کنیم که هر کدوم از این اعداد نشون دهنده یکی از سطح‌های لاگ‌گیری<sup id="fnref-Logging levels"><a class="footnote-ref" href="#fn-Logging levels">3</a></sup> است.</p>
+<ul>
+<li>DEBUG</li>
+<li>ERROR</li>
+<li>FATAL</li>
+<li>WARN</li>
+<li>INFO</li>
+<li>TRACE</li>
+</ul>
+<p>از اونجایی که لاگ‌ها بدون پیغام مناسب کاربرد کمی دارن؛ برای فرستادن متن پیام‌ها از <code>@userinfo</code> کمک می‌گیریم.</p>
+<p>پس در نهایت توی کدهامون چیزی شبیه کد زیر داریم:</p>
+<div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="o">[</span><span class="n">dbo</span><span class="o">]</span><span class="p">.</span><span class="o">[</span><span class="n">sp_TraceSandbox</span><span class="o">]</span><span class="w"> </span><span class="nv">@Param</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nc">NVARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"></span>
+<span class="k">AS</span><span class="w"></span>
+<span class="w">    </span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRY</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">DECLARE</span><span class="w"> </span><span class="nv">@info</span><span class="w"> </span><span class="nc">NVARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">SET</span><span class="w"> </span><span class="nv">@info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;Info: @param = &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">@Param</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">-- Log اطلاعات</span>
+<span class="w">        </span><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">..</span><span class="n">sp_trace_generateevent</span><span class="w"> </span><span class="nv">@eventid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">82</span><span class="p">,</span><span class="w"> </span><span class="nv">@userinfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">@info</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">THROW</span><span class="w"> </span><span class="mi">51010</span><span class="p">,</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;مثلا یه خطایی اتفاق افتاده!&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">TRY</span><span class="w"></span>
+<span class="w">    </span><span class="k">BEGIN</span><span class="w"> </span><span class="k">CATCH</span><span class="w"></span>
+
+<span class="w">        </span><span class="k">DECLARE</span><span class="w"> </span><span class="nv">@error</span><span class="w"> </span><span class="nc">NVARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="k">SET</span><span class="w"> </span><span class="nv">@error</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">N</span><span class="s1">&#39;Error: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">ERROR_MESSAGE</span><span class="p">();</span><span class="w"></span>
+
+<span class="w">        </span><span class="c1">-- Log خطاها</span>
+<span class="w">        </span><span class="k">EXEC</span><span class="w"> </span><span class="n">master</span><span class="p">..</span><span class="n">sp_trace_generateevent</span><span class="w"> </span><span class="nv">@eventid</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">83</span><span class="p">,</span><span class="w"> </span><span class="nv">@userinfo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">@error</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">END</span><span class="w"> </span><span class="k">CATCH</span><span class="p">;</span><span class="w"></span>
+<span class="k">GO</span><span class="w"></span>
+</pre></div>
+
+
+<p>برای اینکه بتونیم این اطلاعات رو  در پروفایلر ببینیم، رویدادهای مورد نظرمون رو از بخش User configurable انتخاب می‌کنیم.
+همتای هر کدوم از پارامترها در جدول زیر مشخص شدن.</p>
+<table>
+<thead>
+<tr>
+<th>sp_trace_generateevent</th>
+<th>SQL Server Profiler</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@eventid 82-91</td>
+<td>User configurable 0-9</td>
+</tr>
+<tr>
+<td>@userinfo</td>
+<td>TextData</td>
+</tr>
+<tr>
+<td>@userdata</td>
+<td>BinaryData</td>
+</tr>
+</tbody>
+</table>
+<p><img alt="SQL Server Profiler configs" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/SQL-Server-Profiler-Captures-sp_trace_generateevent-Events.PNG"></p>
+<p>و در نهایت وقتی که مشغول ردگیری خطاها شدیم و پروفایلر رو اجرا کردیم داده‌های مورد نظرمون رو می‌بینیم.
+<img alt="Trace" src="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler.md/SQL-Server-Profiler-Trace.PNG"></p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn-Stored procedure">
+<p>Stored procedure&#160;<a class="footnote-backref" href="#fnref-Stored procedure" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn-Function">
+<p>Function&#160;<a class="footnote-backref" href="#fnref-Function" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn-Logging levels">
+<p>Logging levels&#160;<a class="footnote-backref" href="#fnref-Logging levels" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+				</div>
+			</div>
 			<div class="post">
 				<h3>
 					<a href="http://daftar.ziaa.ir/posts/2017/01/Create_and_populate_Persian_date_dimension_to_be_used_in_OLAP_Cubes/" title="ساختن بُعد تاریخ شمسی برای استفاده در Cube">ساختن بُعد تاریخ شمسی برای استفاده در Cube</a>
