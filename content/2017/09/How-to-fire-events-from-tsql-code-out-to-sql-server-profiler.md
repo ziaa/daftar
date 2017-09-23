@@ -30,7 +30,7 @@ Tags: T-SQL, SQL Server Profiler , Log, Trace
 پس در نهایت توی کدهامون چیزی شبیه کد زیر داریم:
 
 ```tsql
-CREATE PROCEDURE [dbo].[sp_TraceSandbox] @Param AS NVARCHAR(128)
+CREATE PROCEDURE [dbo].[usp_TraceSandbox] @Param AS NVARCHAR(128)
 AS
     BEGIN TRY
         
