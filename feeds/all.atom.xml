@@ -1,5 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2017-09-01T12:00:00+04:30</updated><entry><title>اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟</title><link href="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/" rel="alternate"></link><published>2017-09-01T12:00:00+04:30</published><updated>2017-09-01T12:00:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2017-09-01:/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/</id><summary type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>دفتر</title><link href="http://daftar.ziaa.ir/" rel="alternate"></link><link href="http://daftar.ziaa.ir/feeds/all.atom.xml" rel="self"></link><id>http://daftar.ziaa.ir/</id><updated>2017-09-23T16:30:00+03:30</updated><entry><title>اندر احوالات کد کثیفی که از گذشته به ما ارث رسیده و بازسازی اون</title><link href="http://daftar.ziaa.ir/posts/2017/09/A-little-about-ugly-legacy-code-and-refactoring/" rel="alternate"></link><published>2017-09-23T16:30:00+03:30</published><updated>2017-09-23T16:30:00+03:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2017-09-23:/posts/2017/09/A-little-about-ugly-legacy-code-and-refactoring/</id><summary type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://ganjoor.net/saadi/divan/ghazals/sh597/"&gt;بسیار سفر باید تا پخته شود خامی&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;در دنیای برنامه‌نویسی همیشه اینجوری نیست که همه چیز بر وفق مراد باشه؛ درست مثل زندگی.
+ مثلا زیاد پیش میاد که به هر دلیلی کارهای یکی از اعضای تیم به تو واگذار میشه. اینجاست که اگه بین اعضای تیم، استاندارد درستی تعریف …&lt;/p&gt;</summary><content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;a href="https://ganjoor.net/saadi/divan/ghazals/sh597/"&gt;بسیار سفر باید تا پخته شود خامی&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;در دنیای برنامه‌نویسی همیشه اینجوری نیست که همه چیز بر وفق مراد باشه؛ درست مثل زندگی.
+ مثلا زیاد پیش میاد که به هر دلیلی کارهای یکی از اعضای تیم به تو واگذار میشه. اینجاست که اگه بین اعضای تیم، استاندارد درستی تعریف نشده باشه یا برنامه‌نویس ارشدی وجود نداشته باشه یا وجود داشته اما وظایفش رو به درستی انجام نداده یا مرور کدی&lt;sup id="fnref-Code review"&gt;&lt;a class="footnote-ref" href="#fn-Code review"&gt;1&lt;/a&gt;&lt;/sup&gt; در کار نباشه یا خود نفر قبلی مسئولیت‌پذیر نبوده یا ضعف آموزش یا به هزاران دلیل ریز و درشت دیگه، کدی به دست شما میرسه که &lt;strong&gt;ناخوانا و شکننده&lt;/strong&gt;ست. به هر جاش که دست می‌زنیم یه جای دیگه‌اش بهم می‌خوره و یه باگ دیگه پیدا می‌شه.
+هر اسمی می‌خواید  براش بذارید. کد زشت، کثیف، بدبو، اسپاگتی یا هرچیز دیگه‌ای. مهم اینه که شما بتونید این‌ها رو شناسایی و بعد اصلاح کنید.
+  در این موقعیت به نظرم بهتره که:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;خونسردی&lt;/strong&gt; خودتون رو حفط کنید (درست مثل توصیه‌های روشنی که برای حوادث طبیعی می‌گن!)&lt;/li&gt;
+&lt;li&gt;برنامه‌نویس‌های قبلی رو &lt;strong&gt;قضاوت نکنید&lt;/strong&gt; چونکه شما در شرایط اونها نبودید و تضمینی وجود نداره که در اون شرایط کار شما بهتر از حالت فعلی از آب در میومد &lt;/li&gt;
+&lt;li&gt;از اشتباهات نفرات قبلی &lt;strong&gt;درس بگیرید&lt;/strong&gt; و سعی کنید شما دیگه تکرارشون نکنید. یه چیزی شبیه «ادب از که آموختی...»&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;غُر نزنید&lt;/strong&gt;. به جای غر زدن به این موضوع به شکل مسئله‌ای نگاه کنید که وظیفه حل کردنش رو به شما سپردن&lt;/li&gt;
+&lt;li&gt;و در نهایت اینکه &lt;strong&gt;بازسازی و ریفکتور&lt;/strong&gt;&lt;sup id="fnref-Refactoring"&gt;&lt;a class="footnote-ref" href="#fn-Refactoring"&gt;2&lt;/a&gt;&lt;/sup&gt; کردن کد رو &lt;a href="https://refactoring.guru/refactoring"&gt;یاد بگیرید&lt;/a&gt; و با کمک برنامه‌نویس ارشدتر، حتی به اندازه یک خط کد، کدها رو بهبود بدید. تغییرات کوچک بدید و قدم‌های کوچک بردارید.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;نمیشه نسخه کلی پیچید؛ اما به نظرم بدترین کار اینه که ما هم همون راه نفرات قبلی رو ادامه بدیم. توسعه‌دهندگی صرفا این نیست که یه چیز جدید رو از صفر خودمون شروع کنیم بلکه بهبود هم بخشی از مسیر توسعه است.&lt;/p&gt;
+&lt;div class="footnote"&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id="fn-Code review"&gt;
+&lt;p&gt;Code review&amp;#160;&lt;a class="footnote-backref" href="#fnref-Code review" title="Jump back to footnote 1 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id="fn-Refactoring"&gt;
+&lt;p&gt;Refactoring&amp;#160;&lt;a class="footnote-backref" href="#fnref-Refactoring" title="Jump back to footnote 2 in the text"&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</content><category term="Clean Code"></category><category term="Refactoring"></category><category term="Spaghetti code"></category><category term="Legacy code"></category></entry><entry><title>اهمیت لاگ‌ها - در کدهای TSQL چه طور اطلاعات مورد نظر رو به SQL Server Profiler بفرستیم؟</title><link href="http://daftar.ziaa.ir/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/" rel="alternate"></link><published>2017-09-01T12:00:00+04:30</published><updated>2017-09-01T12:00:00+04:30</updated><author><name>Ziaa</name></author><id>tag:daftar.ziaa.ir,2017-09-01:/posts/2017/09/How-to-fire-events-from-tsql-code-out-to-sql-server-profiler/</id><summary type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;بعضی وقت‌ها برنامه‌هایی که نوشتیم دچار اشکال می‌شن یا بهتره بگم نوشتن نرم‌افزار بدون باگ تقریبا نشدنی است. البته مشخصه که اینجا منظورم از نرم افزار، برنامه‌ای با یکی-دو خط …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;a href="https://ganjoor.net/parvin/divanp/mtm/sh126/"&gt;هر گُلی، علت و عیبی دارد گُل بی علت و بی عیب، خداست&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;بعضی وقت‌ها برنامه‌هایی که نوشتیم دچار اشکال می‌شن یا بهتره بگم نوشتن نرم‌افزار بدون باگ تقریبا نشدنی است. البته مشخصه که اینجا منظورم از نرم افزار، برنامه‌ای با یکی-دو خط کد نیست! مهم اینه که باگ‌ها رو در زمان مناسب تشخیص داد و به درستی رفع و مدیریت کرد. یکی از مواردی که شناسایی باگ‌ها رو راحت‌تر می‌کنه لاگ‌ها هستن. 
 جمله معروفی هست که می‌گه:&lt;/p&gt;
@@ -21,7 +50,7 @@
 &lt;/ul&gt;
 &lt;p&gt;از اونجایی که لاگ‌ها بدون پیغام مناسب کاربرد کمی دارن؛ برای فرستادن متن پیام‌ها از &lt;code&gt;@userinfo&lt;/code&gt; کمک می‌گیریم.&lt;/p&gt;
 &lt;p&gt;پس در نهایت توی کدهامون چیزی شبیه کد زیر داریم:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;PROCEDURE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dbo&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;sp_TraceSandbox&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@Param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;AS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;NVARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;CREATE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;PROCEDURE&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;dbo&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;usp_TraceSandbox&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nv"&gt;@Param&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;AS&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nc"&gt;NVARCHAR&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;128&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="k"&gt;AS&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;span class="w"&gt;    &lt;/span&gt;&lt;span class="k"&gt;BEGIN&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;TRY&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 

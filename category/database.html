@@ -57,7 +57,7 @@
 </ul>
 <p>از اونجایی که لاگ‌ها بدون پیغام مناسب کاربرد کمی دارن؛ برای فرستادن متن پیام‌ها از <code>@userinfo</code> کمک می‌گیریم.</p>
 <p>پس در نهایت توی کدهامون چیزی شبیه کد زیر داریم:</p>
-<div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="o">[</span><span class="n">dbo</span><span class="o">]</span><span class="p">.</span><span class="o">[</span><span class="n">sp_TraceSandbox</span><span class="o">]</span><span class="w"> </span><span class="nv">@Param</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nc">NVARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"></span>
+<div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">PROCEDURE</span><span class="w"> </span><span class="o">[</span><span class="n">dbo</span><span class="o">]</span><span class="p">.</span><span class="o">[</span><span class="n">usp_TraceSandbox</span><span class="o">]</span><span class="w"> </span><span class="nv">@Param</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="nc">NVARCHAR</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"></span>
 <span class="k">AS</span><span class="w"></span>
 <span class="w">    </span><span class="k">BEGIN</span><span class="w"> </span><span class="k">TRY</span><span class="w"></span>
 
